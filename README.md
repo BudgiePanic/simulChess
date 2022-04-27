@@ -15,6 +15,7 @@ Chess variant where both players move at the same time.
 - If a piece moves off a square that the opponent's piece moves to, nothing happens, provided the pieces didn't move through each other. (i.e. A rook moves off A8 and a bishop moves onto it.)  
 - If the king moves off a square that the opponent then attacks, nothing happens.
 - Checks can be blocked by moving a piece to intercept an opponents attack.
+- If the king moves into a square that is then attacked (or castles through a square that is then attacked), that is a check and that side loses.
 
 - Because both players move at the same time, the concept of flagging no longer makes sense. Time control needs a novel solution.
     - Perhaps the match has a shared time pool. (whole match lasts 10 minutes, each move time is 5,10,20,30 seconds etc etc.) and if no one wins at the end of the timer, some other criteria (like material captured) is used to decide a winner.
