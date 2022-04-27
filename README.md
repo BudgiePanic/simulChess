@@ -16,6 +16,22 @@ Chess variant where both players move at the same time.
 - If the king moves off a square that the opponent then attacks, nothing happens.
 - Checks can be blocked by moving a piece to intercept an opponents attack.
 
+- Because both players move at the same time, the concept of flagging no longer makes sense. Time control needs a novel solution.
+    - Perhaps the match has a shared time pool. (whole match lasts 10 minutes, each move time is 5,10,20,30 seconds etc etc.) and if no one wins at the end of the timer, some other criteria (like material captured) is used to decide a winner.
+    - Perhaps there is no overall timer and the match continues until someo one wins or by mutual agreement.
+
 # why
 
 this idea came from a 'shower thought'.
+
+# System architecture
+
+- An internal model to represent the state of the game
+  - enforces the rules
+  - applies the logic
+  - configurable (custom starting positions)
+  - reversable (undo move)
+- A server to host the model and communicate with clients
+  - extendable
+    - custom messages (i.e. award more time, resignation)
+- A client to talk to the server, make moves, display the game.
